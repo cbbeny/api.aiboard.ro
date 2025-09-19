@@ -1,0 +1,12 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.php [QSA,L]
+
+# Basic CORS (ajustează originurile tale reale)
+<IfModule mod_headers.c>
+  Header set Access-Control-Allow-Origin "https://app.aiboard.ro"
+  Header set Access-Control-Allow-Methods "GET, OPTIONS"
+  Header set Access-Control-Allow-Headers "Content-Type, X-Requested-With, X-Api-Key"
+  Header set Access-Control-Max-Age "86400"
+</IfModule>
